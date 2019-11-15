@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"eks","Source":"./cluster","Dir":"cluster"},{"Key":"kubernetes-server","Source":"./kubernetes-server","Dir":"kubernetes-server"},{"Key":"vpc","Source":"./network","Dir":"network"}]}
