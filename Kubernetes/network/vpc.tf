@@ -54,6 +54,7 @@ resource "aws_subnet" "master_subnet" {
 
   tags = {
     Name = "Master_${element(data.aws_availability_zones.available.names, count.index)}"
+    "kubernetes.io/cluster/production" = "shared"
   }
 }
 
@@ -66,6 +67,7 @@ resource "aws_subnet" "worker_subnet" {
 
   tags = {
     Name = "Worker_${element(data.aws_availability_zones.available.names, count.index)}"
+    "kubernetes.io/cluster/production" = "shared"
   }
 }
 

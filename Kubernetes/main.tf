@@ -34,3 +34,27 @@ module "eks" {
   worker_subnet                 = ["${module.vpc.worker_node_subnet}"]
   subnet_ids                    = ["${module.vpc.master_subnet}", "${module.vpc.worker_node_subnet}"]
 }
+
+resource "aws_ecr_repository" "foo" {
+  name                 = "twitter-stream"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+  encryption_configuration {
+    encryption_type = "AES256"
+  }
+}
+
+resource "aws_ecr_repository" "twitter-print-message" {
+  name                 = "twitter-print-message"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+  encryption_configuration {
+    encryption_type = "AES256"
+  }
+}
